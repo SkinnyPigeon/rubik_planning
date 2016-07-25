@@ -1,3 +1,5 @@
+var _ = require( 'lodash' )
+
 var R1 = [ 'W7', 'B3', 'R1' ];
 var R2 = [ 'W8', 'R2' ];
 var R3 = [ 'W9', 'R3', 'G1' ];
@@ -54,7 +56,32 @@ var right = [ R3, R6, R9,
               G4, G5, G6,
               O3, O6, O9 ]
 
+var toMove = 0;
 
+
+var frontClockwiseFront = function() {
+  for( var i = 0; i < 9; i ++) {
+    if( i < 4) {
+      i * 3
+    } else {
+      if( i % 4 === 0 ) {
+        i / 2
+      } else {
+        if( i === 6 ) {
+          i += 2 
+        } else {
+          if( i === 7 ) {
+            i -= 6
+          } else {
+            if( i === 9 ) {
+              i -= 2
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 
 
