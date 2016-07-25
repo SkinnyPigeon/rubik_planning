@@ -70,20 +70,13 @@ console.log( test )
 
 var frontClockwise = function( face ) {
   move( face, 2, 8 );
-  console.log( face );
   move( face, 4, 7 );
-  console.log( face );
   move( face, 1, 5 );
-  console.log( face );
   move( face, 2, 4 );
-  console.log( face );
   move( face, 0, 2 );
-  console.log( face );
   move( face, 0, 1 );
-  console.log( face );
 }
 
-front = frontClockwise( test )
 
 
 
