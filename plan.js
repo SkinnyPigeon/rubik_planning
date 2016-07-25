@@ -90,19 +90,64 @@ var rightward = [ O3, O6, O9,
               G4, G5, G6,
               R3, R6, R9 ]
 
+var front = [ R1, R2, R3,
+              R4, R5, R6,
+              R7, R8, R9 ]
 
+var back = [ O1, O2, O3,
+             O4, O5, O6, 
+             O7, O8, O9 ]
 
-var test = [ 1, 2, 3, 
-             4, 5, 6, 
-             7, 8, 9 ]
+var top = [ Y1, Y2, Y3,
+            Y4, Y5, Y6,
+            Y7, Y8, Y9 ]
+
+var bottom = [ W1, W2, W3,
+               W4, W5, W6,
+               W7, W8, W9 ]
+
+var left = [ B1, B2, B3,
+             B4, B5, B6,
+             B7, B8, B9 ]
+
+var right = [ G1, G2, G3,
+              G4, G5, G6,
+              G7, G8, G9 ] 
+
+var cube = [ front, back, top, bottom, left, right ]
+var spare = []
+
+var testRed = [ 01, 02, 03,
+                04, 05, 06,
+                07, 08, 09 ]
+
+var testYellow = [ 11, 12, 13, 
+                   14, 15, 16, 
+                   17, 18, 19 ]
+
+var testGreen = [ 21, 22, 23,
+                  24, 25, 26,
+                  27, 28, 29 ]
+
+var testWhite = [ 31, 32, 33,
+                  34, 35, 36,
+                  37, 38, 39 ] 
+
+var testBlue = [ 41, 42, 43,
+                 44, 45, 46,
+                 47, 48, 49 ]
+
+var testOrange = [ 51, 52, 53,
+                   54, 55, 56,
+                   57, 58, 59 ]   
+
+var testCube = [ testRed, testYellow, testGreen, testWhite, testBlue, testOrange ]
 
 function move(arr, fromIndex, toIndex) {
   var element = arr[fromIndex];
   arr.splice(fromIndex, 1);
   arr.splice(toIndex, 0, element);
 }
-
-console.log( test )
 
 var frontClockwise = function( face ) {
   move( face, 2, 8 );
@@ -113,9 +158,14 @@ var frontClockwise = function( face ) {
   move( face, 0, 1 );
 }
 
+var sideSelect = function( cube ) {
+  var sides = [ cube[1], cube[2], cube[3], cube[4] ]
+  console.log( sides )
+}
+sideSelect(testCube)
+// var rotateClockwise = function( face )
 
-
-
+// console.log( cube )
 
 
 
