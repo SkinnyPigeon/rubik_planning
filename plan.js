@@ -33,83 +33,59 @@ var Y5 = [ 'Y5' ];
 var W5 = [ 'W5' ];
 
 var front = [ R1, R2, R3, 
-              R4, R5, R6,
-              R7, R8, R9 ]
+R4, R5, R6,
+R7, R8, R9 ]
 
 var back = [ O1, O2, O3, 
-             O4, O5, O6,
-             O7, O8, O9 ]
+O4, O5, O6,
+O7, O8, O9 ]
 
 var top = [ R7, R8, R9,
-            B6, Y5, G4,
-            O1, O2, O3 ]
+B6, Y5, G4,
+O1, O2, O3 ]
 
 var bottom = [ O7, O8, O9,
-               B4, W5, G6,
-               R1, R2, R3 ]
+B4, W5, G6,
+R1, R2, R3 ]
 
 var left = [ R1, R4, R7,
-             B4, B5, B6,
-             O1, O4, O7 ]
+B4, B5, B6,
+O1, O4, O7 ]
 
 var right = [ R3, R6, R9,
-              G4, G5, G6,
-              O3, O6, O9 ]
+G4, G5, G6,
+O3, O6, O9 ]
 
-var toMove = 0;
+var test = [ 1, 2, 3, 
+4, 5, 6, 
+7, 8, 9 ]
 
-var move = function( from, to ) {
-  Array.prototype.move = function(from, to) {
-      this.splice(to, 0, this.splice(from, 1)[0]);
-  };
+function move(arr, fromIndex, toIndex) {
+  var element = arr[fromIndex];
+  arr.splice(fromIndex, 1);
+  arr.splice(toIndex, 0, element);
 }
 
-function arraymove(arr, fromIndex, toIndex) {
-    var element = arr[fromIndex];
-    arr.splice(fromIndex, 1);
-    arr.splice(toIndex, 0, element);
-}
-
-    console.log( front )
+console.log( test )
 
 var frontClockwise = function( face ) {
-  for( var i = 1; i < 10; i ++) {
-    // if( i < 4) {
-    //   j = i * 3
-
-    //   arraymove( face, i, j )
-    //   console.log( face )
-  //   } else {
-      if( i % 4 === 0 ) {
-        k = i - 1
-        j = (i / 2) - 1
-        arraymove( face, k, j )
-        console.log( face )
-      }
-  //       // move( face[i], face[(i / 2)] )
-  //     } else {
-  //       if( i === 6 ) {
-  //         // move( face[i], face[(i + 2)] )
-  //       } else {
-  //         if( i === 7 ) {
-  //           // move( face[i], face[(i - 6)] )
-  //         } else {
-  //           if( i === 9 ) {
-  //             // move( face[i], face[(i - 2)] )
-  //           }
-  //         }
-  //       }
-  //     }
-    // }
-  }
+  move( face, 2, 8 );
+  console.log( face );
+  move( face, 4, 7 );
+  console.log( face );
+  move( face, 1, 5 );
+  console.log( face );
+  move( face, 2, 4 );
+  console.log( face );
+  move( face, 0, 2 );
+  console.log( face );
+  move( face, 0, 1 );
+  console.log( face );
 }
 
-front = frontClockwise( front )
+front = frontClockwise( test )
 
-var a = [ 1, 2, 3]
 
-arraymove( a, 0, 2 )
-console.log( a )
 
 
 
