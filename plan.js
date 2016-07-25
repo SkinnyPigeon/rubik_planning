@@ -158,14 +158,56 @@ var frontClockwise = function( face ) {
   move( face, 0, 1 );
 }
 
+function moveArray( arr, arr2, fromIndex, toIndex ) {
+  var element = arr[fromIndex];
+  arr.splice( fromIndex, 1 );
+  arr2.splice( toIndex, 0, element );
+}
+
 var sideSelect = function( cube ) {
   var sides = [ cube[1], cube[2], cube[3], cube[4] ]
-  console.log( sides )
-}
-sideSelect(testCube)
-// var rotateClockwise = function( face )
 
-// console.log( cube )
+  moveArray( sides[0], sides[1], 8, 6 )
+  moveArray( sides[0], sides[1], 7, 3 )
+  moveArray( sides[0], sides[1], 6, 0 )
+
+  moveArray( sides[1], sides[2], 9, 0 )
+  moveArray( sides[1], sides[2], 5, 1 )
+  moveArray( sides[1], sides[2], 1, 2 )
+
+  moveArray( sides[2], sides[3], 3, 2 )
+  moveArray( sides[2], sides[3], 7, 5 )
+  moveArray( sides[2], sides[3], 9, 8 )
+
+  moveArray( sides[3], sides[0], 3, 6 )
+  moveArray( sides[3], sides[0], 6, 7 )
+  moveArray( sides[3], sides[0], 9, 8 )
+
+  console.log( sides[0] )
+  console.log( sides[1] )
+  console.log( sides[2] )
+  console.log( sides[3] )
+}
+
+
+// 789 147 123 369
+// 147 123 369 789
+
+// 678 036 012 258
+// 036 012 258 678 
+sideSelect(testCube)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
