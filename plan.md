@@ -1,17 +1,36 @@
-       State 1                  State 2
+       State 1                 
   
            !R !R !R                       
            !R !R !R  
            !R !R !R
   !B !B !B !Y !Y !Y !G !G !G
-  ?B ?B ?B ?Y ?Y ?Y ?G ?G ?G
+  !B !B !B !Y !Y !Y !G !G !G
   !B !B !B !Y !Y !Y !G !G !G
            !O !O !O
            !O !O !O
            !O !O !O
            !W !W !W
-           ?W ?W ?W
            !W !W !W
+           !W !W !W
+
+
+
+
+                  YELLOW                                  WHITE
+
+                  Middle 2                                Middle 2
+
+                    Y5                                      W5
+
+
+                    BLUE                                    GREEN
+
+      SIDE L      MIDDLE 2      SIDE R             Side L     Middle 2    Side R
+
+      W4 - B4        B5         B6 - Y4            Y6 - G4      G5        G6 - W6
+
+
+
  
                       RED                                     ORANGE                
 
