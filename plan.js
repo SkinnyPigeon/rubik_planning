@@ -45,7 +45,7 @@ var top = [ R7, R8, R9,
             O1, O2, O3 ]
 
 var bottom = [ O7, O8, O9,
-               B3, W5, G6,
+               B4, W5, G6,
                R1, R2, R3 ]
 
 var left = [ R1, R4, R7,
@@ -58,31 +58,58 @@ var right = [ R3, R6, R9,
 
 var toMove = 0;
 
+var move = function( from, to ) {
+  Array.prototype.move = function(from, to) {
+      this.splice(to, 0, this.splice(from, 1)[0]);
+  };
+}
 
-var frontClockwiseFront = function() {
-  for( var i = 0; i < 9; i ++) {
-    if( i < 4) {
-      i * 3
-    } else {
+function arraymove(arr, fromIndex, toIndex) {
+    var element = arr[fromIndex];
+    arr.splice(fromIndex, 1);
+    arr.splice(toIndex, 0, element);
+}
+
+    console.log( front )
+
+var frontClockwise = function( face ) {
+  for( var i = 1; i < 10; i ++) {
+    // if( i < 4) {
+    //   j = i * 3
+
+    //   arraymove( face, i, j )
+    //   console.log( face )
+  //   } else {
       if( i % 4 === 0 ) {
-        i / 2
-      } else {
-        if( i === 6 ) {
-          i += 2 
-        } else {
-          if( i === 7 ) {
-            i -= 6
-          } else {
-            if( i === 9 ) {
-              i -= 2
-            }
-          }
-        }
+        k = i - 1
+        j = (i / 2) - 1
+        arraymove( face, k, j )
+        console.log( face )
       }
-    }
+  //       // move( face[i], face[(i / 2)] )
+  //     } else {
+  //       if( i === 6 ) {
+  //         // move( face[i], face[(i + 2)] )
+  //       } else {
+  //         if( i === 7 ) {
+  //           // move( face[i], face[(i - 6)] )
+  //         } else {
+  //           if( i === 9 ) {
+  //             // move( face[i], face[(i - 2)] )
+  //           }
+  //         }
+  //       }
+  //     }
+    // }
   }
 }
 
+front = frontClockwise( front )
+
+var a = [ 1, 2, 3]
+
+arraymove( a, 0, 2 )
+console.log( a )
 
 
 
