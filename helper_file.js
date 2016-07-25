@@ -22,6 +22,16 @@ var testOrange = [ 51, 52, 53,
                    54, 55, 56,
                    57, 58, 59 ]   
 
+
+var frontAntiClockwise = function( face ) {
+ move( face, 2, 0 )
+ move( face, 5, 1 )
+ move( face, 8, 2 )
+ move( face, 4, 3 )
+ move( face, 6, 4 )
+ move( face, 8, 5 )
+}
+
 var testCube = [ testRed, testYellow, testGreen, testWhite, testBlue, testOrange ]
 
 function moveArray( arr, arr2, fromIndex, toIndex ) {

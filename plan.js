@@ -160,12 +160,9 @@ var frontClockwise = function( face ) {
 }
 
 var frontAntiClockwise = function( face ) {
-  move( face, 2, 0 )
-  move( face, 5, 1 )
-  move( face, 8, 2 )
-  move( face, 4, 3 )
-  move( face, 6, 4 )
-  move( face, 8, 5 )
+  frontClockwise( face )
+  frontClockwise( face )
+  frontClockwise( face )
   console.log( face )
 }
 
@@ -203,6 +200,9 @@ var rotateAntiClockwise = function( cube ) {
   rotateClockwise( cube )
   rotateClockwise( cube )
 }
+
+frontClockwise( testRed )
+frontAntiClockwise( testRed )
 
 rotateClockwise( testCube )
 rotateAntiClockwise( testCube )
