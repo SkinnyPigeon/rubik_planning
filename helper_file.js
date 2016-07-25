@@ -58,7 +58,11 @@ var rotateClockwise = function( cube ) {
 rotateClockwise( testCube )
 
 
+// 789 147 123 369 
+// 147 123 369 789 
 
+// 678 036 012 258
+// 036 012 258 678 
 
 
 

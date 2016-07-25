@@ -186,20 +186,15 @@ var rotateClockwise = function( cube ) {
   moveArray( sides[1], sides[2], 3, 1 )
   moveArray( sides[1], sides[2], 3, 2 )
 
-  moveArray( sides[2], sides[3], 3, 6 )
-  moveArray( sides[2], sides[3], 3, 7 )
-  moveArray( sides[2], sides[3], 3, 8 )
+  moveArray( sides[2], sides[3], 3, 9 )
+  moveArray( sides[2], sides[3], 3, 9 )
+  moveArray( sides[2], sides[3], 3, 9 )
 
-  moveArray( sides[3], sides[0], 9, 6 )
-  moveArray( sides[3], sides[0], 9, 7 )
-  moveArray( sides[3], sides[0], 9, 8 )
+  moveArray( sides[3], sides[0], 6, 6 )
+  moveArray( sides[3], sides[0], 6, 7 )
+  moveArray( sides[3], sides[0], 6, 8 )
 
-  console.log( sides[0] )
-  console.log( sides[1] )
-  console.log( sides[2] )
-  console.log( sides[3] )
- 
-
+ console.log( sides[0] )
 }
 
 var rotateAntiClockwise = function( cube ) {
@@ -209,20 +204,8 @@ var rotateAntiClockwise = function( cube ) {
   rotateClockwise( cube )
 }
 
-
-// 789 147 123 369 
-// 147 123 369 789 
-
-// 678 036 012 258
-// 036 012 258 678 
-
-// console.log( testCube )
-
 rotateClockwise( testCube )
-
-// console.log( testCube )
-// rotateAntiClockwise( testCube )
-// console.log( testCube )
+rotateAntiClockwise( testCube )
 
 
 
