@@ -190,7 +190,7 @@ var rotateClockwise = function( cube ) {
   moveArray( sides[3], sides[0], 6, 7 )
   moveArray( sides[3], sides[0], 6, 8 )
 
- console.log( sides[0] )
+ // console.log( sides[0] )
 }
 
 var rotateAntiClockwise = function( cube ) {
@@ -200,16 +200,14 @@ var rotateAntiClockwise = function( cube ) {
   rotateClockwise( cube )
 }
 
-frontClockwise( testRed )
-frontAntiClockwise( testRed )
+// frontAntiClockwise( testRed )
 
-rotateClockwise( testCube )
-rotateAntiClockwise( testCube )
+// rotateAntiClockwise( testCube )
 
 var testCube = [ testRed, testYellow, testGreen, testWhite, testBlue, testOrange ]
 
 var state = {
-  cube: 0 
+  cube: [ testRed, testYellow, testGreen, testWhite, testBlue, testOrange ] 
 }
 
 var selectSide = function( side, cube ) {
@@ -227,6 +225,18 @@ var selectSide = function( side, cube ) {
     state.cube = [ cube[4], cube[5], cube[1], cube[0], cube[3], cube[2] ]
   }
 }
+
+selectSide( "red", state.cube )
+rotateClockwise( state.cube )
+selectSide( "yellow", state.cube )
+rotateClockwise( state.cube )
+selectSide( "yellow", state.cube )
+rotateAntiClockwise( state.cube )
+selectSide( "red", state.cube )
+rotateAntiClockwise( state.cube )
+console.log( state.cube )
+
+
 
 
 
