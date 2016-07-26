@@ -5,8 +5,6 @@ var whiteFace = [ 'W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9' ]
 var blueFace = [ 'B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9' ]
 var orangeFace = [ 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'O7', 'O8', 'O9' ]
 
-var cube = [ redFace, yellowFace, greenFace, whiteFace, blueFace, orangeFace ]
-
 function move(arr, fromIndex, toIndex) {
   var element = arr[fromIndex];
   arr.splice(fromIndex, 1);
@@ -61,13 +59,43 @@ var rotateAntiClockwise = function( cube ) {
   rotateClockwise( cube )
 }
 
+state = {
+  cube: [ redFace, yellowFace, greenFace, whiteFace, blueFace, orangeFace ]
+}
+
+var selectSide = function( side, cube ) {
+  if( side === "red" ){ 
+    state.cube = [ cube[0], cube[1], cube[2], cube[3], cube[4], cube[5] ]
+  } else if( side === "yellow") {
+    state.cube = [ cube[1], cube[5], cube[2], cube[0], cube[4], cube[3] ]
+  } else if( side === "orange" ) {
+    state.cube = [ cube[5], cube[3], cube[2], cube[1], cube[4], cube[0] ]
+  } else if( side === "white" ) {
+    state.cube = [ cube[3], cube[0], cube[2], cube[5], cube[4], cube[1] ]
+  } else if( side === "green" ) {
+    state.cube = [ cube[2], cube[0], cube[1], cube[5], cube[3], cube[4] ]
+  } else if( side === "blue" ) {
+    state.cube = [ cube[4], cube[5], cube[1], cube[0], cube[3], cube[2] ]
+  }
+}
 
 
-// selectSide( "red", state.cube )
-rotateClockwise( cube )
+selectSide( "red", state.cube )
+rotateClockwise( state.cube )
 // selectSide( "yellow", state.cube )
 // rotateClockwise( state.cube )
+selectSide( "blue", state.cube )
+rotateClockwise( state.cube )
 // rotateAntiClockwise( state.cube )
-// selectSide( "red", state.cube )
-rotateAntiClockwise( cube )
-console.log( cube )
+// selectSide( "yellow", state.cube )
+rotateAntiClockwise( state.cube )
+selectSide( "red", state.cube )
+rotateAntiClockwise( state.cube )
+
+
+console.log( state.cube )
+
+
+
+
+
