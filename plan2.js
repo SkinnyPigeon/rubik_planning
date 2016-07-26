@@ -74,21 +74,27 @@ var selectSide = function( side, cube ) {
     state.cube = [ cube[3], cube[0], cube[2], cube[5], cube[4], cube[1] ]
   } else if( side === "green" ) {
     state.cube = [ cube[2], cube[0], cube[1], cube[5], cube[3], cube[4] ]
+    rotateClockwise( state.cube )
+    state.cube = [ cube[5], cube[3], cube[2], cube[1], cube[4], cube[0] ]
+    rotateAntiClockwise( state.cube )
   } else if( side === "blue" ) {
     state.cube = [ cube[4], cube[5], cube[1], cube[0], cube[3], cube[2] ]
+    rotateClockwise( state.cube )
+    state.cube = [ cube[5], cube[3], cube[2], cube[1], cube[4], cube[0] ]
+    rotateAntiClockwise( state.cube )
   }
 }
 
 
-selectSide( "red", state.cube )
+// selectSide( "red", state.cube )
 rotateClockwise( state.cube )
-// selectSide( "yellow", state.cube )
+selectSide( "yellow", state.cube )
+rotateClockwise( state.cube )
+// selectSide( "blue", state.cube )
 // rotateClockwise( state.cube )
-selectSide( "blue", state.cube )
-rotateClockwise( state.cube )
-// rotateAntiClockwise( state.cube )
-// selectSide( "yellow", state.cube )
 rotateAntiClockwise( state.cube )
+// selectSide( "yellow", state.cube )
+// rotateAntiClockwise( state.cube )
 selectSide( "red", state.cube )
 rotateAntiClockwise( state.cube )
 
