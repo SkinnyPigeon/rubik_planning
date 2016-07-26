@@ -141,7 +141,6 @@ var testOrange = [ 51, 52, 53,
                    54, 55, 56,
                    57, 58, 59 ]   
 
-var testCube = [ testRed, testYellow, testGreen, testWhite, testBlue, testOrange ]
 
 function move(arr, fromIndex, toIndex) {
   var element = arr[fromIndex];
@@ -207,7 +206,27 @@ frontAntiClockwise( testRed )
 rotateClockwise( testCube )
 rotateAntiClockwise( testCube )
 
+var testCube = [ testRed, testYellow, testGreen, testWhite, testBlue, testOrange ]
 
+var state = {
+  cube: 0 
+}
+
+var selectSide = function( side, cube ) {
+  if( side === "red" ){ 
+    state.cube = [ cube[0], cube[1], cube[2], cube[3], cube[4], cube[5] ]
+  } else if( side === "yellow") {
+    state.cube = [ cube[1], cube[5], cube[2], cube[0], cube[4], cube[3] ]
+  } else if( side === "orange" ) {
+    state.cube = [ cube[5], cube[3], cube[2], cube[1], cube[4], cube[0] ]
+  } else if( side === "white" ) {
+    state.cube = [ cube[3], cube[0], cube[2], cube[5], cube[4], cube[1] ]
+  } else if( side === "green" ) {
+    state.cube = [ cube[2], cube[0], cube[1], cube[5], cube[3], cube[4] ]
+  } else if( side === "blue" ) {
+    state.cube = [ cube[4], cube[5], cube[1], cube[0], cube[3], cube[2] ]
+  }
+}
 
 
 
